@@ -1,7 +1,7 @@
 export default function Home() {
     return (
         <main className="">
-            <h1 className=" font-bold">Hello Prismic</h1>
+            <h1 className="font-bold">Hello Prismic</h1>
         </main>
     );
 }
