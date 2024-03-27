@@ -30,7 +30,17 @@ const Footer = async () => {
                 <p className="text-[#98A2B3] text-lg md:text-sm lg:text-lg text-center">
                     {data.copyright}
                 </p>
-                <div>media</div>
+                <div>
+                    <ul className="flex items-center justify-start gap-3 mb-5 md:mb-0">
+                        {data.footer_media_link.map(({ icon, link }, i) => (
+                            <li key={i}>
+                                <PrismicNextLink field={link}>
+                                    <PrismicNextImage field={icon} />
+                                </PrismicNextLink>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </footer>
     );

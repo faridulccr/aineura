@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"banner_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim laboris pariatur est do enim laborum consequat ea cupidatat. Exercitation fugiat consectetur fugiat sint fugiat."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

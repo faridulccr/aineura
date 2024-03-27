@@ -3,15 +3,15 @@ import { PrismicNextImage } from "@prismicio/next";
 
 const Home = async () => {
     const client = createClient();
-    const setting = await client.getSingle("settings");
-    const { data } = setting;
+    const homepage = await client.getSingle("settings");
+    const { data } = homepage;
 
     return (
         <main>
             <div>
                 <PrismicNextImage
-                    className="w-full h-screen "
-                    field={data.homepage_banner}
+                    className="w-full h-screen"
+                    field={data.banner}
                 />
             </div>
         </main>

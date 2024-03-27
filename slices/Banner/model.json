@@ -1,8 +1,8 @@
 {
-  "id": "footer_logo",
+  "id": "banner",
   "type": "SharedSlice",
-  "name": "FooterLogo",
-  "description": "FooterLogo",
+  "name": "Banner",
+  "description": "Banner",
   "variations": [
     {
       "id": "default",
@@ -12,12 +12,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "logo": {
-          "type": "Image",
+        "banner_content": {
+          "type": "StructuredText",
           "config": {
-            "label": "logo",
-            "constraint": {},
-            "thumbnails": []
+            "label": "banner content",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "embed,paragraph"
           }
         }
       },

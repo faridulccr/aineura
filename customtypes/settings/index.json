@@ -38,14 +38,6 @@
           "thumbnails": []
         }
       },
-      "homepage_banner": {
-        "type": "Image",
-        "config": {
-          "label": "homepage banner",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
       "company_link": {
         "type": "Group",
         "config": {
@@ -172,6 +164,39 @@
         "config": {
           "label": "copyright",
           "placeholder": ""
+        }
+      },
+      "banner": {
+        "type": "Image",
+        "config": {
+          "label": "banner",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "footer_media_link": {
+        "type": "Group",
+        "config": {
+          "label": "footer media link",
+          "repeat": true,
+          "fields": {
+            "icon": {
+              "type": "Image",
+              "config": {
+                "label": "icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
         }
       }
     }

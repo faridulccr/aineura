@@ -3,5 +3,5 @@
 import dynamic from "next/dynamic";
 
 export const components = {
-  footer_logo: dynamic(() => import("./FooterLogo")),
+  banner: dynamic(() => import("./Banner")),
 };

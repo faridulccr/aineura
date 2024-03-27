@@ -155,6 +155,31 @@ export interface SettingsDocumentDataFooterLogoItem {
 }
 
 /**
+ * Item in *settings → footer media link*
+ */
+export interface SettingsDocumentDataFooterMediaLinkItem {
+  /**
+   * icon field in *settings → footer media link*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.footer_media_link[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * link field in *settings → footer media link*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.footer_media_link[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
  * Content for settings documents
  */
 interface SettingsDocumentData {
@@ -179,17 +204,6 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   fnknow_logo: prismic.ImageField<never>;
-
-  /**
-   * homepage banner field in *settings*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: settings.homepage_banner
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  homepage_banner: prismic.ImageField<never>;
 
   /**
    * company link field in *settings*
@@ -262,6 +276,30 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   copyright: prismic.KeyTextField;
+
+  /**
+   * banner field in *settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.banner
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  banner: prismic.ImageField<never>;
+
+  /**
+   * footer media link field in *settings*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.footer_media_link[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  footer_media_link: prismic.GroupField<
+    Simplify<SettingsDocumentDataFooterMediaLinkItem>
+  >;
 }
 
 /**
@@ -283,49 +321,46 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes = SettingsDocument;
 
 /**
- * Primary content in *FooterLogo → Primary*
+ * Primary content in *Banner → Primary*
  */
-export interface FooterLogoSliceDefaultPrimary {
+export interface BannerSliceDefaultPrimary {
   /**
-   * logo field in *FooterLogo → Primary*
+   * banner content field in *Banner → Primary*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer_logo.primary.logo
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **API ID Path**: banner.primary.banner_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  logo: prismic.ImageField<never>;
+  banner_content: prismic.RichTextField;
 }
 
 /**
- * Default variation for FooterLogo Slice
+ * Default variation for Banner Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type FooterLogoSliceDefault = prismic.SharedSliceVariation<
+export type BannerSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<FooterLogoSliceDefaultPrimary>,
+  Simplify<BannerSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *FooterLogo*
+ * Slice variation for *Banner*
  */
-type FooterLogoSliceVariation = FooterLogoSliceDefault;
+type BannerSliceVariation = BannerSliceDefault;
 
 /**
- * FooterLogo Shared Slice
+ * Banner Shared Slice
  *
- * - **API ID**: `footer_logo`
- * - **Description**: FooterLogo
+ * - **API ID**: `banner`
+ * - **Description**: Banner
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type FooterLogoSlice = prismic.SharedSlice<
-  "footer_logo",
-  FooterLogoSliceVariation
->;
+export type BannerSlice = prismic.SharedSlice<"banner", BannerSliceVariation>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -345,11 +380,12 @@ declare module "@prismicio/client" {
       SettingsDocumentDataResourcesLinkItem,
       SettingsDocumentDataLegalLinkItem,
       SettingsDocumentDataFooterLogoItem,
+      SettingsDocumentDataFooterMediaLinkItem,
       AllDocumentTypes,
-      FooterLogoSlice,
-      FooterLogoSliceDefaultPrimary,
-      FooterLogoSliceVariation,
-      FooterLogoSliceDefault,
+      BannerSlice,
+      BannerSliceDefaultPrimary,
+      BannerSliceVariation,
+      BannerSliceDefault,
     };
   }
 }
