@@ -1,11 +1,13 @@
+import clsx from "clsx";
 import type { Metadata } from "next";
+import { Glory } from "next/font/google";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
 import "./globals.css";
 
-import localFont from "next/font/local";
-
-// Font files can be colocated inside of `app`
-const myFont = localFont({
-    src: "./Gilroy-Light.otf", // Path to the font file on the client
+const glory = Glory({
+    subsets: ["latin"],
+    variable: "--font-glory",
     display: "swap",
 });
 
@@ -16,12 +18,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
     children,
-}: Readonly<{
+}: {
     children: React.ReactNode;
-}>) {
+}) {
     return (
-        <html lang="en">
-            <body className={myFont.className}>{children}</body>
+        <html lang="en" className={clsx(glory.variable)}>
+            <body>
+                <Header />
+                {children}
+                <Footer />
+            </body>
         </html>
     );
 }

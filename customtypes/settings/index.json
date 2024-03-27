@@ -1,0 +1,179 @@
+{
+  "format": "custom",
+  "id": "settings",
+  "label": "settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "nav_menu": {
+        "type": "Group",
+        "config": {
+          "label": "nav menu",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "link_text": {
+              "type": "Text",
+              "config": {
+                "label": "link text",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "fnknow_logo": {
+        "type": "Image",
+        "config": {
+          "label": "FnKnow logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "homepage_banner": {
+        "type": "Image",
+        "config": {
+          "label": "homepage banner",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "company_link": {
+        "type": "Group",
+        "config": {
+          "label": "company link",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "label",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "product_link": {
+        "type": "Group",
+        "config": {
+          "label": "product link",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "label",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "resources_link": {
+        "type": "Group",
+        "config": {
+          "label": "resources link",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "label",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "legal_link": {
+        "type": "Group",
+        "config": {
+          "label": "legal link",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "label",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "footer_logo": {
+        "type": "Group",
+        "config": {
+          "label": "footer logo",
+          "repeat": true,
+          "fields": {
+            "logo": {
+              "type": "Image",
+              "config": {
+                "label": "logo",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "copyright": {
+        "type": "Text",
+        "config": {
+          "label": "copyright",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
