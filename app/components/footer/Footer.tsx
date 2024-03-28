@@ -35,7 +35,10 @@ const Footer = async () => {
                         {data.footer_media_link.map(({ icon, link }, i) => (
                             <li key={i}>
                                 <PrismicNextLink field={link}>
-                                    <PrismicNextImage field={icon} />
+                                    <PrismicNextImage
+                                        className="w-6 h-6 rounded-full"
+                                        field={icon}
+                                    />
                                 </PrismicNextLink>
                             </li>
                         ))}

@@ -1,4 +1,7 @@
+"use client";
+
 import { Content } from "@prismicio/client";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 
 /**
@@ -10,14 +13,37 @@ export type BannerProps = SliceComponentProps<Content.BannerSlice>;
  * Component for "Banner" Slices.
  */
 const Banner = ({ slice }: BannerProps): JSX.Element => {
-  return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for banner (variation: {slice.variation}) Slices
-    </section>
-  );
+    return (
+        <section
+            data-slice-type={slice.slice_type}
+            data-slice-variation={slice.variation}
+            className="relative font-glory"
+        >
+            <PrismicNextImage
+                className="h-screen w-full"
+                field={slice.primary.banner}
+            />
+            <div className="absolute w-full h-full top-0 left-0 right-0 z-1 text-white flex flex-col lg:flex-row items-center justify-center lg:justify-between px-6 lg:px-40 gap-7 lg:gap-20 2xl:gap-40">
+                <PrismicNextImage
+                    className="w-[182px h-[250px] lg:w-[250px] lg:h-[350px]"
+                    field={slice.primary.aineura_logo}
+                />
+                <h1 className="text-[38px] text-center lg:text-[50px] font-[400] 2xl:w-1/2 2xl:px-10">
+                    {slice.primary.banner_content}{" "}
+                    <span className="text-[#E88AEA]">
+                        {slice.primary.banner_content_2}
+                    </span>{" "}
+                    {slice.primary.banner_content_3}
+                </h1>
+            </div>
+            <PrismicNextLink
+                className="absolute bottom-6 md:bottom-20 right-6 md:right-10"
+                field={slice.primary.bot_link}
+            >
+                <PrismicNextImage field={slice.primary.bot_logo} />
+            </PrismicNextLink>
+        </section>
+    );
 };
 
 export default Banner;

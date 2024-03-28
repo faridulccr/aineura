@@ -12,13 +12,57 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "banner": {
+          "type": "Image",
+          "config": {
+            "label": "banner",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "aineura_logo": {
+          "type": "Image",
+          "config": {
+            "label": "aineura logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "bot_logo": {
+          "type": "Image",
+          "config": {
+            "label": "bot logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "bot_link": {
+          "type": "Link",
+          "config": {
+            "label": "bot link",
+            "placeholder": "",
+            "select": null
+          }
+        },
         "banner_content": {
-          "type": "StructuredText",
+          "type": "Text",
           "config": {
             "label": "banner content",
-            "placeholder": "",
-            "allowTargetBlank": false,
-            "multi": "embed,paragraph"
+            "placeholder": ""
+          }
+        },
+        "banner_content_2": {
+          "type": "Text",
+          "config": {
+            "label": "banner content 2",
+            "placeholder": ""
+          }
+        },
+        "banner_content_3": {
+          "type": "Text",
+          "config": {
+            "label": "banner content 3",
+            "placeholder": ""
           }
         }
       },
