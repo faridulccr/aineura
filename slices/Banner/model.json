@@ -44,25 +44,13 @@
             "select": null
           }
         },
-        "banner_content": {
-          "type": "Text",
+        "content": {
+          "type": "StructuredText",
           "config": {
-            "label": "banner content",
-            "placeholder": ""
-          }
-        },
-        "banner_content_2": {
-          "type": "Text",
-          "config": {
-            "label": "banner content 2",
-            "placeholder": ""
-          }
-        },
-        "banner_content_3": {
-          "type": "Text",
-          "config": {
-            "label": "banner content 3",
-            "placeholder": ""
+            "label": "content",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "heading1,heading2"
           }
         }
       },

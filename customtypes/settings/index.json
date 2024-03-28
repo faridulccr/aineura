@@ -166,14 +166,6 @@
           "placeholder": ""
         }
       },
-      "banner": {
-        "type": "Image",
-        "config": {
-          "label": "banner",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
       "footer_media_link": {
         "type": "Group",
         "config": {

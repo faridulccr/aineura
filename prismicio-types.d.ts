@@ -4,7 +4,10 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = BannerSlice;
+type HomepageDocumentDataSlicesSlice =
+  | FinancialLearningSlice
+  | AboutSectionSlice
+  | BannerSlice;
 
 /**
  * Content for homepage documents
@@ -343,17 +346,6 @@ interface SettingsDocumentData {
   copyright: prismic.KeyTextField;
 
   /**
-   * banner field in *settings*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: settings.banner
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  banner: prismic.ImageField<never>;
-
-  /**
    * footer media link field in *settings*
    *
    * - **Field Type**: Group
@@ -384,6 +376,81 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes = HomepageDocument | SettingsDocument;
+
+/**
+ * Primary content in *AboutSection → Primary*
+ */
+export interface AboutSectionSliceDefaultPrimary {
+  /**
+   * title field in *AboutSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * content field in *AboutSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * btn field in *AboutSection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.primary.btn
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  btn: prismic.ImageField<never>;
+
+  /**
+   * btn link field in *AboutSection → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.primary.btn_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  btn_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for AboutSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutSection*
+ */
+type AboutSectionSliceVariation = AboutSectionSliceDefault;
+
+/**
+ * AboutSection Shared Slice
+ *
+ * - **API ID**: `about_section`
+ * - **Description**: AboutSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutSectionSlice = prismic.SharedSlice<
+  "about_section",
+  AboutSectionSliceVariation
+>;
 
 /**
  * Primary content in *Banner → Primary*
@@ -430,34 +497,14 @@ export interface BannerSliceDefaultPrimary {
   bot_link: prismic.LinkField;
 
   /**
-   * banner content field in *Banner → Primary*
+   * content field in *Banner → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: banner.primary.banner_content
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: banner.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  banner_content: prismic.KeyTextField;
-
-  /**
-   * banner content 2 field in *Banner → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: banner.primary.banner_content_2
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  banner_content_2: prismic.KeyTextField;
-
-  /**
-   * banner content 3 field in *Banner → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: banner.primary.banner_content_3
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  banner_content_3: prismic.KeyTextField;
+  content: prismic.RichTextField;
 }
 
 /**
@@ -487,6 +534,116 @@ type BannerSliceVariation = BannerSliceDefault;
  */
 export type BannerSlice = prismic.SharedSlice<"banner", BannerSliceVariation>;
 
+/**
+ * Primary content in *FinancialLearning → Primary*
+ */
+export interface FinancialLearningSliceDefaultPrimary {
+  /**
+   * bot iimage field in *FinancialLearning → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: financial_learning.primary.bot_iimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  bot_iimage: prismic.ImageField<never>;
+
+  /**
+   * heading field in *FinancialLearning → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: financial_learning.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * bot bg image field in *FinancialLearning → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: financial_learning.primary.bot_bg_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  bot_bg_image: prismic.ImageField<never>;
+
+  /**
+   * content1 field in *FinancialLearning → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: financial_learning.primary.content1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  content1: prismic.KeyTextField;
+
+  /**
+   * content2 field in *FinancialLearning → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: financial_learning.primary.content2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  content2: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *FinancialLearning → Items*
+ */
+export interface FinancialLearningSliceDefaultItem {
+  /**
+   * icon field in *FinancialLearning → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: financial_learning.items[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * label field in *FinancialLearning → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: financial_learning.items[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for FinancialLearning Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FinancialLearningSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FinancialLearningSliceDefaultPrimary>,
+  Simplify<FinancialLearningSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *FinancialLearning*
+ */
+type FinancialLearningSliceVariation = FinancialLearningSliceDefault;
+
+/**
+ * FinancialLearning Shared Slice
+ *
+ * - **API ID**: `financial_learning`
+ * - **Description**: FinancialLearning
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FinancialLearningSlice = prismic.SharedSlice<
+  "financial_learning",
+  FinancialLearningSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -510,10 +667,19 @@ declare module "@prismicio/client" {
       SettingsDocumentDataFooterLogoItem,
       SettingsDocumentDataFooterMediaLinkItem,
       AllDocumentTypes,
+      AboutSectionSlice,
+      AboutSectionSliceDefaultPrimary,
+      AboutSectionSliceVariation,
+      AboutSectionSliceDefault,
       BannerSlice,
       BannerSliceDefaultPrimary,
       BannerSliceVariation,
       BannerSliceDefault,
+      FinancialLearningSlice,
+      FinancialLearningSliceDefaultPrimary,
+      FinancialLearningSliceDefaultItem,
+      FinancialLearningSliceVariation,
+      FinancialLearningSliceDefault,
     };
   }
 }

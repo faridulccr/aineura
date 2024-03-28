@@ -2,7 +2,7 @@
 
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
 /**
  * Props for `Banner`.
@@ -13,6 +13,19 @@ export type BannerProps = SliceComponentProps<Content.BannerSlice>;
  * Component for "Banner" Slices.
  */
 const Banner = ({ slice }: BannerProps): JSX.Element => {
+    const content = {
+        heading1: ({ children }: { children: any }) => (
+            <h2 className="text-[38px] lg:text-[50px] font-[400] inline">
+                {children}
+            </h2>
+        ),
+        heading2: ({ children }: { children: any }) => (
+            <h2 className="text-[38px] lg:text-[50px] font-[400] inline text-[#E88AEA] mx-1.5">
+                {children}
+            </h2>
+        ),
+    };
+
     return (
         <section
             data-slice-type={slice.slice_type}
@@ -28,13 +41,13 @@ const Banner = ({ slice }: BannerProps): JSX.Element => {
                     className="w-[182px h-[250px] lg:w-[250px] lg:h-[350px]"
                     field={slice.primary.aineura_logo}
                 />
-                <h1 className="text-[38px] text-center lg:text-[50px] font-[400] 2xl:w-1/2 2xl:px-10">
-                    {slice.primary.banner_content}{" "}
-                    <span className="text-[#E88AEA]">
-                        {slice.primary.banner_content_2}
-                    </span>{" "}
-                    {slice.primary.banner_content_3}
-                </h1>
+
+                <div className="xl:w-1/2 2xl:px-10 text-center lg:text-start leading-[50px] lg:leading-[62px]">
+                    <PrismicRichText
+                        field={slice.primary.content}
+                        components={content}
+                    />
+                </div>
             </div>
             <PrismicNextLink
                 className="absolute bottom-6 md:bottom-20 right-6 md:right-10"

@@ -79,20 +79,16 @@
 					"url": "http://twitter.com"
 				}
 			},
-			"banner_content": {
-				"__TYPE__": "FieldContent",
-				"value": "breathe",
-				"type": "Text"
-			},
-			"banner_content_2": {
-				"__TYPE__": "FieldContent",
-				"value": "out",
-				"type": "Text"
-			},
-			"banner_content_3": {
-				"__TYPE__": "FieldContent",
-				"value": "terrible",
-				"type": "Text"
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Favorite"
+						}
+					}
+				]
 			}
 		},
 		"items": [

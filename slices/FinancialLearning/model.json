@@ -1,0 +1,74 @@
+{
+  "id": "financial_learning",
+  "type": "SharedSlice",
+  "name": "FinancialLearning",
+  "description": "FinancialLearning",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "bot_iimage": {
+          "type": "Image",
+          "config": {
+            "label": "bot iimage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading2"
+          }
+        },
+        "bot_bg_image": {
+          "type": "Image",
+          "config": {
+            "label": "bot bg image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "content1": {
+          "type": "Text",
+          "config": {
+            "label": "content1",
+            "placeholder": ""
+          }
+        },
+        "content2": {
+          "type": "Text",
+          "config": {
+            "label": "content2",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "icon": {
+          "type": "Image",
+          "config": {
+            "label": "icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "label": {
+          "type": "Text",
+          "config": {
+            "label": "label",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}
