@@ -14,7 +14,7 @@ export type FinancialLearningProps =
 const FinancialLearning = ({ slice }: FinancialLearningProps): JSX.Element => {
     const components = {
         heading2: ({ children }: { children: any }) => (
-            <h2 className="md:text-[34px] leading-10 font-[400] inline">
+            <h2 style={{ margin: "0" }} className="leading-10 font-[400]">
                 {children}{" "}
             </h2>
         ),

@@ -19,19 +19,44 @@ body {
   background: var(--background-color);
   max-width: 1440px;
   margin: 0 auto;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 @layer components {
   .heading h2 {
-    @apply text-[28px] lg:text-[40px] inline
+    @apply text-[28px] sm:text-[34px] lg:text-[40px] inline
   }
 
   .heading h2:nth-of-type(even) {
     color: #5200Bb;
     display: inline;
+    margin: 0 8px;
   }
 
   .banner-content h2:nth-of-type(even) {
     color: #e88aea;
+    display: inline;
+  }
+
+  .angle-btn {
+    background-color: #F4F3F8;
+    border: 1px solid #5200BB;
+    border-radius: 50%;
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    width: 26px;
+    height: 26px;
+
+    @apply bottom-[20px] sm:top-[56%];
+  }
+
+  .angle-btn img {
+    width: 6px;
+    height: 12px;
   }
 }

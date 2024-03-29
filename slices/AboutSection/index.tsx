@@ -12,7 +12,6 @@ export type AboutSectionProps = SliceComponentProps<Content.AboutSectionSlice>;
  */
 const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
     const components = {
-        heading2: ({ children }: { children: any }) => <h2>{children} </h2>,
         paragraph: ({ children }: { children: any }) => (
             <p className="text-[28px] leading-[40px] my-6">{children}</p>
         ),
