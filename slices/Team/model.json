@@ -1,8 +1,8 @@
 {
-  "id": "financial_learning",
+  "id": "team",
   "type": "SharedSlice",
-  "name": "FinancialLearning",
-  "description": "FinancialLearning",
+  "name": "Team",
+  "description": "Team",
   "variations": [
     {
       "id": "default",
@@ -12,14 +12,6 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "bot_iimage": {
-          "type": "Image",
-          "config": {
-            "label": "bot iimage",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
         "heading": {
           "type": "StructuredText",
           "config": {
@@ -27,14 +19,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "heading2"
-          }
-        },
-        "bot_bg_image": {
-          "type": "Image",
-          "config": {
-            "label": "bot bg image",
-            "constraint": {},
-            "thumbnails": []
           }
         },
         "content": {
@@ -48,19 +32,21 @@
         }
       },
       "items": {
-        "icon": {
+        "teammate": {
           "type": "Image",
           "config": {
-            "label": "icon",
+            "label": "teammate",
             "constraint": {},
             "thumbnails": []
           }
         },
-        "label": {
-          "type": "Text",
+        "info": {
+          "type": "StructuredText",
           "config": {
-            "label": "label",
-            "placeholder": ""
+            "label": "info",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading5,paragraph,strong"
           }
         }
       }

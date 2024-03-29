@@ -20,3 +20,18 @@ body {
   max-width: 1440px;
   margin: 0 auto;
 }
+
+@layer components {
+  .heading h2 {
+    @apply text-[28px] lg:text-[40px] inline
+  }
+
+  .heading h2:nth-of-type(even) {
+    color: #5200Bb;
+    display: inline;
+  }
+
+  .banner-content h2:nth-of-type(even) {
+    color: #e88aea;
+  }
+}

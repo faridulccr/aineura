@@ -50,7 +50,7 @@
             "label": "content",
             "placeholder": "",
             "allowTargetBlank": false,
-            "multi": "heading1,heading2"
+            "multi": "heading2"
           }
         }
       },

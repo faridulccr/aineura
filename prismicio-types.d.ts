@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | TeamSlice
   | FinancialLearningSlice
   | AboutSectionSlice
   | BannerSlice;
@@ -569,24 +570,14 @@ export interface FinancialLearningSliceDefaultPrimary {
   bot_bg_image: prismic.ImageField<never>;
 
   /**
-   * content1 field in *FinancialLearning → Primary*
+   * content field in *FinancialLearning → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: financial_learning.primary.content1
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: financial_learning.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  content1: prismic.KeyTextField;
-
-  /**
-   * content2 field in *FinancialLearning → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: financial_learning.primary.content2
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  content2: prismic.KeyTextField;
+  content: prismic.RichTextField;
 }
 
 /**
@@ -644,6 +635,83 @@ export type FinancialLearningSlice = prismic.SharedSlice<
   FinancialLearningSliceVariation
 >;
 
+/**
+ * Primary content in *Team → Primary*
+ */
+export interface TeamSliceDefaultPrimary {
+  /**
+   * heading field in *Team → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * content field in *Team → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Team → Items*
+ */
+export interface TeamSliceDefaultItem {
+  /**
+   * teammate field in *Team → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team.items[].teammate
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  teammate: prismic.ImageField<never>;
+
+  /**
+   * info field in *Team → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team.items[].info
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  info: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Team Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TeamSliceDefaultPrimary>,
+  Simplify<TeamSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Team*
+ */
+type TeamSliceVariation = TeamSliceDefault;
+
+/**
+ * Team Shared Slice
+ *
+ * - **API ID**: `team`
+ * - **Description**: Team
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamSlice = prismic.SharedSlice<"team", TeamSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -680,6 +748,11 @@ declare module "@prismicio/client" {
       FinancialLearningSliceDefaultItem,
       FinancialLearningSliceVariation,
       FinancialLearningSliceDefault,
+      TeamSlice,
+      TeamSliceDefaultPrimary,
+      TeamSliceDefaultItem,
+      TeamSliceVariation,
+      TeamSliceDefault,
     };
   }
 }
