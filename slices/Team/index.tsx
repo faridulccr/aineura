@@ -46,8 +46,8 @@ const Team = ({ slice }: TeamProps): JSX.Element => {
                     }}
                 />
             </div>
-            <div className="mx-[5vw] sm:mx-[4vw] overflow-hidden border-black">
-                <div className="mt-6 flex gap-[4vw] sm:gap-[3vw] justify-between w-fit mx-auto overflow-hidden ">
+            <div className="mx-[5vw] sm:mx-[4vw] overflow-hidden">
+                <div className="mt-6 flex gap-[4vw] sm:gap-[3vw] justify-between w-fit mx-auto">
                     {slice.items.map(({ teammate, info }, i) => (
                         <div
                             key={i}
@@ -67,13 +67,13 @@ const Team = ({ slice }: TeamProps): JSX.Element => {
                 </div>
 
                 <button
-                    className="angle-btn left-1/2 -translate-x-10 sm:left-2 sm:translate-x-0"
+                    className="angle-btn left-1/2 -translate-x-8 sm:left-2 sm:translate-x-0"
                     value={"previous"}
                 >
                     <Image src={angleLeft} alt="left angle bracket" />
                 </button>
                 <button
-                    className="angle-btn right-1/2 translate-x-10 sm:right-5 sm:translate-x-0"
+                    className="angle-btn right-1/2 translate-x-8 sm:right-5 sm:translate-x-0"
                     value={"next"}
                 >
                     <Image src={angleRight} alt="right angle bracket" />
