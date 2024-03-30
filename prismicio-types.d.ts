@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | FormSectionSlice
   | CollaboratorSlice
   | JourneySectionSlice
   | UserReviewSlice
@@ -699,6 +700,71 @@ export type FinancialLearningSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *FormSection → Primary*
+ */
+export interface FormSectionSliceDefaultPrimary {
+  /**
+   * heading field in *FormSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form_section.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * form bottom text field in *FormSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form_section.primary.form_bottom_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  form_bottom_text: prismic.RichTextField;
+
+  /**
+   * button name field in *FormSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form_section.primary.button_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_name: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for FormSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FormSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FormSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FormSection*
+ */
+type FormSectionSliceVariation = FormSectionSliceDefault;
+
+/**
+ * FormSection Shared Slice
+ *
+ * - **API ID**: `form_section`
+ * - **Description**: FormSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FormSectionSlice = prismic.SharedSlice<
+  "form_section",
+  FormSectionSliceVariation
+>;
+
+/**
  * Primary content in *JourneySection → Primary*
  */
 export interface JourneySectionSliceDefaultPrimary {
@@ -961,6 +1027,10 @@ declare module "@prismicio/client" {
       FinancialLearningSliceDefaultItem,
       FinancialLearningSliceVariation,
       FinancialLearningSliceDefault,
+      FormSectionSlice,
+      FormSectionSliceDefaultPrimary,
+      FormSectionSliceVariation,
+      FormSectionSliceDefault,
       JourneySectionSlice,
       JourneySectionSliceDefaultPrimary,
       JourneySectionSliceVariation,

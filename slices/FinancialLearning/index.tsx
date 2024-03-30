@@ -18,7 +18,7 @@ const components: JSXMapSerializer = {
             {children}{" "}
         </h2>
     ),
-    paragraph: ({ children }: { children: any }) => (
+    paragraph: ({ children }) => (
         <p className="text-xs md:text-lg mb-5">{children}</p>
     ),
 };

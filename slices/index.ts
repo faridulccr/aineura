@@ -7,6 +7,7 @@ export const components = {
   banner: dynamic(() => import("./Banner")),
   collaborator: dynamic(() => import("./Collaborator")),
   financial_learning: dynamic(() => import("./FinancialLearning")),
+  form_section: dynamic(() => import("./FormSection")),
   journey_section: dynamic(() => import("./JourneySection")),
   team: dynamic(() => import("./Team")),
   user_review: dynamic(() => import("./UserReview")),

@@ -1,0 +1,36 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Young"
+						}
+					}
+				]
+			},
+			"form_bottom_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolore et mollit esse ullamco eu do quis est labore commodo consequat cupidatat. Laboris adipisicing esse nisi ex pariatur fugiat adipisicing id ut."
+						}
+					}
+				]
+			},
+			"button_name": {
+				"__TYPE__": "FieldContent",
+				"value": "if",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

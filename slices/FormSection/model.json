@@ -1,0 +1,44 @@
+{
+  "id": "form_section",
+  "type": "SharedSlice",
+  "name": "FormSection",
+  "description": "FormSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "heading",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "heading2"
+          }
+        },
+        "form_bottom_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "form bottom text",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph,hyperlink"
+          }
+        },
+        "button_name": {
+          "type": "Text",
+          "config": {
+            "label": "button name",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
