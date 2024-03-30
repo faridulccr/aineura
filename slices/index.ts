@@ -6,6 +6,7 @@ export const components = {
   about_section: dynamic(() => import("./AboutSection")),
   banner: dynamic(() => import("./Banner")),
   financial_learning: dynamic(() => import("./FinancialLearning")),
+  journey_section: dynamic(() => import("./JourneySection")),
   team: dynamic(() => import("./Team")),
   user_review: dynamic(() => import("./UserReview")),
 };

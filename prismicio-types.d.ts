@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | JourneySectionSlice
   | UserReviewSlice
   | TeamSlice
   | FinancialLearningSlice
@@ -637,6 +638,71 @@ export type FinancialLearningSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *JourneySection → Primary*
+ */
+export interface JourneySectionSliceDefaultPrimary {
+  /**
+   * background field in *JourneySection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: journey_section.primary.background
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background: prismic.ImageField<never>;
+
+  /**
+   * title field in *JourneySection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: journey_section.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * subtitle field in *JourneySection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: journey_section.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for JourneySection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type JourneySectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<JourneySectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *JourneySection*
+ */
+type JourneySectionSliceVariation = JourneySectionSliceDefault;
+
+/**
+ * JourneySection Shared Slice
+ *
+ * - **API ID**: `journey_section`
+ * - **Description**: JourneySection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type JourneySectionSlice = prismic.SharedSlice<
+  "journey_section",
+  JourneySectionSliceVariation
+>;
+
+/**
  * Primary content in *Team → Primary*
  */
 export interface TeamSliceDefaultPrimary {
@@ -829,6 +895,10 @@ declare module "@prismicio/client" {
       FinancialLearningSliceDefaultItem,
       FinancialLearningSliceVariation,
       FinancialLearningSliceDefault,
+      JourneySectionSlice,
+      JourneySectionSliceDefaultPrimary,
+      JourneySectionSliceVariation,
+      JourneySectionSliceDefault,
       TeamSlice,
       TeamSliceDefaultPrimary,
       TeamSliceDefaultItem,

@@ -46,12 +46,12 @@ const Team = ({ slice }: TeamProps): JSX.Element => {
                     }}
                 />
             </div>
-            <div className="mx-[5vw] sm:mx-[4vw] overflow-hidden">
-                <div className="mt-6 flex gap-[4vw] sm:gap-[3vw] justify-between w-fit mx-auto">
+            <div className="mx-auto w-[90vw] overflow-hidden">
+                <div className="mt-6 flex gap-[4vw] sm:gap-[3vw] lg:gap-[3.2vw] justify-between w-fit">
                     {slice.items.map(({ teammate, info }, i) => (
                         <div
                             key={i}
-                            className="text-center w-[42vw] sm:w-[28vw] lg:w-[20vw]  "
+                            className="text-center w-[43vw] sm:w-[28vw] lg:w-[20vw]  "
                         >
                             <PrismicNextImage
                                 // className="w-[160px] md:w-[200px] lg:w-[282px] h-auto mx-auto"
@@ -73,7 +73,7 @@ const Team = ({ slice }: TeamProps): JSX.Element => {
                     <Image src={angleLeft} alt="left angle bracket" />
                 </button>
                 <button
-                    className="angle-btn bottom-[20px] sm:top-[56%] right-1/2 sm:right-5 translate-x-8 sm:translate-x-0"
+                    className="angle-btn bottom-[20px] sm:top-[56%] right-1/2 sm:right-2 translate-x-8 sm:translate-x-0"
                     value={"next"}
                 >
                     <Image src={angleRight} alt="right angle bracket" />

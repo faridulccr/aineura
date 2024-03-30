@@ -19,7 +19,9 @@ export type UserReviewProps = SliceComponentProps<Content.UserReviewSlice>;
 const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
     const content = {
         paragraph: ({ children }: { children: any }) => (
-            <p className="mb-5 text-lg leading-6 pr-4 font-[400]">{children}</p>
+            <p className="mb-5 text-sm md:text-lg leading-6 pr-4 font-[400]">
+                {children}
+            </p>
         ),
     };
     const info = {
@@ -35,21 +37,21 @@ const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
         <section
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
-            className="md:px-8 mb-10"
+            className="mb-10"
         >
-            <div className="md:bg-[#f4f3f8] rounded-3xl pt-10 pb-16 md:px-16 relative">
+            <div className="md:bg-[#f4f3f8] rounded-3xl pt-10 pb-16 md:w-[90vw] md:mx-auto relative">
                 <div className="heading text-center">
                     <PrismicRichText field={slice.primary.heading} />
                 </div>
-                <div className="mx-[5vw] md:mx-0 overflow-hidden">
-                    <div className="flex gap-[2vw] justify-center md:justify-between items-center mt-5 sticky z-10 w-fit md:w-auto">
+                <div className="overflow-hidden md:w-[80vw] md:mx-auto">
+                    <div className="flex md:gap-[4vw] mt-5 sticky z-10 w-fit">
                         {slice.items.map(
                             (
                                 { comments, customer_image, customer_info },
                                 i
                             ) => (
                                 <div
-                                    className="bg-white rounded-[22px] w-[86vw] md:w-[40vw] p-8"
+                                    className="bg-white rounded-[22px] w-screen md:w-[38vw] p-10 pr-16 md:pr-10"
                                     key={i}
                                 >
                                     <div className="relative">
@@ -66,7 +68,7 @@ const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
                                             alt="top quote"
                                         />
                                         <Image
-                                            className="absolute -bottom-1 -right-4 w-7 h-7"
+                                            className="absolute -bottom-4 -right-4 w-7 h-7"
                                             src={bottom_quote}
                                             alt="bottom quote"
                                         />
