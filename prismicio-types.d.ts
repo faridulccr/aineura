@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | CollaboratorSlice
   | JourneySectionSlice
   | UserReviewSlice
   | TeamSlice
@@ -538,6 +539,66 @@ type BannerSliceVariation = BannerSliceDefault;
 export type BannerSlice = prismic.SharedSlice<"banner", BannerSliceVariation>;
 
 /**
+ * Primary content in *Collaborator → Primary*
+ */
+export interface CollaboratorSliceDefaultPrimary {
+  /**
+   * heading field in *Collaborator → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collaborator.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Collaborator → Items*
+ */
+export interface CollaboratorSliceDefaultItem {
+  /**
+   * image field in *Collaborator → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: collaborator.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Collaborator Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CollaboratorSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CollaboratorSliceDefaultPrimary>,
+  Simplify<CollaboratorSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Collaborator*
+ */
+type CollaboratorSliceVariation = CollaboratorSliceDefault;
+
+/**
+ * Collaborator Shared Slice
+ *
+ * - **API ID**: `collaborator`
+ * - **Description**: Collaborator
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CollaboratorSlice = prismic.SharedSlice<
+  "collaborator",
+  CollaboratorSliceVariation
+>;
+
+/**
  * Primary content in *FinancialLearning → Primary*
  */
 export interface FinancialLearningSliceDefaultPrimary {
@@ -890,6 +951,11 @@ declare module "@prismicio/client" {
       BannerSliceDefaultPrimary,
       BannerSliceVariation,
       BannerSliceDefault,
+      CollaboratorSlice,
+      CollaboratorSliceDefaultPrimary,
+      CollaboratorSliceDefaultItem,
+      CollaboratorSliceVariation,
+      CollaboratorSliceDefault,
       FinancialLearningSlice,
       FinancialLearningSliceDefaultPrimary,
       FinancialLearningSliceDefaultItem,

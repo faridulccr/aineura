@@ -1,5 +1,5 @@
+import FnKnowTbn from "@/app/components/FnKnowTbn";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
 /**
@@ -13,7 +13,9 @@ export type AboutSectionProps = SliceComponentProps<Content.AboutSectionSlice>;
 const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
     const components = {
         paragraph: ({ children }: { children: any }) => (
-            <p className="text-[28px] leading-[40px] my-6">{children}</p>
+            <p className="text-lg leading-7 sm:text-[28px] sm:leading-[40px] my-6">
+                {children}
+            </p>
         ),
     };
 
@@ -24,22 +26,22 @@ const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
             className="py-12 px-5 sm:px-8 lg:px-12 bg-white text-center"
         >
             <div className="heading">
-                <PrismicRichText
-                    field={slice.primary.title}
-                    components={components}
-                />
+                <PrismicRichText field={slice.primary.title} />
             </div>
 
             <PrismicRichText
                 field={slice.primary.content}
                 components={components}
             />
-            <PrismicNextLink field={slice.primary.btn_link}>
+            {/* <PrismicNextLink field={slice.primary.btn_link}>
                 <PrismicNextImage
                     className="w-[220px] h-[55px] rounded-[8px] mx-auto"
                     field={slice.primary.btn}
                 />
-            </PrismicNextLink>
+            </PrismicNextLink> */}
+            <div className="w-fit mx-auto">
+                <FnKnowTbn url="/" />
+            </div>
         </section>
     );
 };

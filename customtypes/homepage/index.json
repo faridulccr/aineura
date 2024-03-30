@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "collaborator": {
+              "type": "SharedSlice"
+            },
             "journey_section": {
               "type": "SharedSlice"
             },
