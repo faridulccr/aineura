@@ -2,7 +2,11 @@ import angleLeft from "@/public/icons/angle-left-solid.svg";
 import angleRight from "@/public/icons/angle-right-solid.svg";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import {
+    JSXMapSerializer,
+    PrismicRichText,
+    SliceComponentProps,
+} from "@prismicio/react";
 import Image from "next/image";
 
 /**
@@ -10,23 +14,16 @@ import Image from "next/image";
  */
 export type TeamProps = SliceComponentProps<Content.TeamSlice>;
 
-/**
- * Component for "Team" Slices.
- */
-const Team = ({ slice }: TeamProps): JSX.Element => {
-    const components = {
-        heading5: ({ children }: { children: any }) => (
-            <h5 className="text-[14px] md:text-xl leading-[24px]">
-                {children}
-            </h5>
-        ),
-        paragraph: ({ children }: { children: any }) => (
-            <p className="text-[10px] md:text-base leading-[18px]">
-                {children}
-            </p>
-        ),
-    };
+const components: JSXMapSerializer = {
+    heading5: ({ children }) => (
+        <h5 className="text-[14px] md:text-xl leading-[24px]">{children}</h5>
+    ),
+    paragraph: ({ children }: { children: any }) => (
+        <p className="text-[10px] md:text-base leading-[18px]">{children}</p>
+    ),
+};
 
+const Team = ({ slice }: TeamProps): JSX.Element => {
     return (
         <section
             data-slice-type={slice.slice_type}
@@ -65,20 +62,19 @@ const Team = ({ slice }: TeamProps): JSX.Element => {
                         </div>
                     ))}
                 </div>
-
-                <button
-                    className="angle-btn bottom-[20px] sm:top-[56%] left-1/2 sm:left-2 -translate-x-8 sm:translate-x-0"
-                    value={"previous"}
-                >
-                    <Image src={angleLeft} alt="left angle bracket" />
-                </button>
-                <button
-                    className="angle-btn bottom-[20px] sm:top-[56%] right-1/2 sm:right-2 translate-x-8 sm:translate-x-0"
-                    value={"next"}
-                >
-                    <Image src={angleRight} alt="right angle bracket" />
-                </button>
             </div>
+            <button
+                className="angle-btn bottom-[20px] sm:top-[56%] left-1/2 sm:left-2 -translate-x-8 sm:translate-x-0"
+                value={"previous"}
+            >
+                <Image src={angleLeft} alt="left angle bracket" />
+            </button>
+            <button
+                className="angle-btn bottom-[20px] sm:top-[56%] right-1/2 sm:right-2 translate-x-8 sm:translate-x-0"
+                value={"next"}
+            >
+                <Image src={angleRight} alt="right angle bracket" />
+            </button>
         </section>
     );
 };

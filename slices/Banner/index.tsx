@@ -2,25 +2,26 @@
 
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import {
+    JSXMapSerializer,
+    PrismicRichText,
+    SliceComponentProps,
+} from "@prismicio/react";
 
 /**
  * Props for `Banner`.
  */
 export type BannerProps = SliceComponentProps<Content.BannerSlice>;
 
-/**
- * Component for "Banner" Slices.
- */
-const Banner = ({ slice }: BannerProps): JSX.Element => {
-    const heading = {
-        heading2: ({ children }: { children: any }) => (
-            <h2 className="text-[38px] lg:text-[50px] font-[400] inline">
-                {children}{" "}
-            </h2>
-        ),
-    };
+const heading: JSXMapSerializer = {
+    heading2: ({ children }) => (
+        <h2 className="text-[38px] lg:text-[50px] font-[400] inline">
+            {children}{" "}
+        </h2>
+    ),
+};
 
+const Banner = ({ slice }: BannerProps): JSX.Element => {
     return (
         <section
             data-slice-type={slice.slice_type}

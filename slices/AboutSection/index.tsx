@@ -1,24 +1,25 @@
 import FnKnowTbn from "@/app/components/FnKnowTbn";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import {
+    JSXMapSerializer,
+    PrismicRichText,
+    SliceComponentProps,
+} from "@prismicio/react";
 
 /**
  * Props for `AboutSection`.
  */
 export type AboutSectionProps = SliceComponentProps<Content.AboutSectionSlice>;
 
-/**
- * Component for "AboutSection" Slices.
- */
-const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
-    const components = {
-        paragraph: ({ children }: { children: any }) => (
-            <p className="text-lg leading-7 sm:text-[28px] sm:leading-[40px] my-6">
-                {children}
-            </p>
-        ),
-    };
+const components: JSXMapSerializer = {
+    paragraph: ({ children }) => (
+        <p className="text-lg leading-7 sm:text-[28px] sm:leading-[40px] my-6">
+            {children}
+        </p>
+    ),
+};
 
+const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
     return (
         <section
             data-slice-type={slice.slice_type}

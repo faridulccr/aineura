@@ -1,6 +1,10 @@
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import {
+    JSXMapSerializer,
+    PrismicRichText,
+    SliceComponentProps,
+} from "@prismicio/react";
 
 /**
  * Props for `FinancialLearning`.
@@ -8,21 +12,18 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 export type FinancialLearningProps =
     SliceComponentProps<Content.FinancialLearningSlice>;
 
-/**
- * Component for "FinancialLearning" Slices.
- */
-const FinancialLearning = ({ slice }: FinancialLearningProps): JSX.Element => {
-    const components = {
-        heading2: ({ children }: { children: any }) => (
-            <h2 style={{ margin: "0" }} className="leading-10 font-[400]">
-                {children}{" "}
-            </h2>
-        ),
-        paragraph: ({ children }: { children: any }) => (
-            <p className="text-xs md:text-lg mb-5">{children}</p>
-        ),
-    };
+const components: JSXMapSerializer = {
+    heading2: ({ children }) => (
+        <h2 style={{ margin: "0" }} className="leading-10 font-[400]">
+            {children}{" "}
+        </h2>
+    ),
+    paragraph: ({ children }: { children: any }) => (
+        <p className="text-xs md:text-lg mb-5">{children}</p>
+    ),
+};
 
+const FinancialLearning = ({ slice }: FinancialLearningProps): JSX.Element => {
     return (
         <section
             data-slice-type={slice.slice_type}

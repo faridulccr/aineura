@@ -1,6 +1,10 @@
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import {
+    JSXMapSerializer,
+    PrismicRichText,
+    SliceComponentProps,
+} from "@prismicio/react";
 import Image from "next/image";
 
 import angleLeft from "@/public/icons/angle-left-solid.svg";
@@ -13,26 +17,23 @@ import top_quote from "@/public/icons/white-qoute.png";
  */
 export type UserReviewProps = SliceComponentProps<Content.UserReviewSlice>;
 
-/**
- * Component for "UserReview" Slices.
- */
-const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
-    const content = {
-        paragraph: ({ children }: { children: any }) => (
-            <p className="mb-5 text-sm md:text-lg leading-6 pr-4 font-[400]">
-                {children}
-            </p>
-        ),
-    };
-    const info = {
-        heading5: ({ children }: { children: any }) => (
-            <h5 className="text-lg leading-8 font-semibold">{children}</h5>
-        ),
-        paragraph: ({ children }: { children: any }) => (
-            <p className="text-xs leading-[14px]">{children}</p>
-        ),
-    };
+const content: JSXMapSerializer = {
+    paragraph: ({ children }) => (
+        <p className="mb-5 text-sm md:text-lg leading-6 pr-4 font-[400]">
+            {children}
+        </p>
+    ),
+};
+const info: JSXMapSerializer = {
+    heading5: ({ children }) => (
+        <h5 className="text-lg leading-8 font-semibold">{children}</h5>
+    ),
+    paragraph: ({ children }: { children: any }) => (
+        <p className="text-xs leading-[14px]">{children}</p>
+    ),
+};
 
+const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
     return (
         <section
             data-slice-type={slice.slice_type}
