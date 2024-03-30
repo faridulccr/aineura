@@ -7,4 +7,5 @@ export const components = {
   banner: dynamic(() => import("./Banner")),
   financial_learning: dynamic(() => import("./FinancialLearning")),
   team: dynamic(() => import("./Team")),
+  user_review: dynamic(() => import("./UserReview")),
 };

@@ -1,0 +1,55 @@
+{
+  "id": "user_review",
+  "type": "SharedSlice",
+  "name": "UserReview",
+  "description": "UserReview",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "heading",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "heading2"
+          }
+        }
+      },
+      "items": {
+        "comments": {
+          "type": "StructuredText",
+          "config": {
+            "label": "comments",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph"
+          }
+        },
+        "customer_image": {
+          "type": "Image",
+          "config": {
+            "label": "customer image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "customer_info": {
+          "type": "StructuredText",
+          "config": {
+            "label": "customer info",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph,heading5"
+          }
+        }
+      }
+    }
+  ]
+}

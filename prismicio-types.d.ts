@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | UserReviewSlice
   | TeamSlice
   | FinancialLearningSlice
   | AboutSectionSlice
@@ -712,6 +713,86 @@ type TeamSliceVariation = TeamSliceDefault;
  */
 export type TeamSlice = prismic.SharedSlice<"team", TeamSliceVariation>;
 
+/**
+ * Primary content in *UserReview → Primary*
+ */
+export interface UserReviewSliceDefaultPrimary {
+  /**
+   * heading field in *UserReview → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: user_review.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *UserReview → Items*
+ */
+export interface UserReviewSliceDefaultItem {
+  /**
+   * comments field in *UserReview → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: user_review.items[].comments
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  comments: prismic.RichTextField;
+
+  /**
+   * customer image field in *UserReview → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: user_review.items[].customer_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  customer_image: prismic.ImageField<never>;
+
+  /**
+   * customer info field in *UserReview → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: user_review.items[].customer_info
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  customer_info: prismic.RichTextField;
+}
+
+/**
+ * Default variation for UserReview Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type UserReviewSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<UserReviewSliceDefaultPrimary>,
+  Simplify<UserReviewSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *UserReview*
+ */
+type UserReviewSliceVariation = UserReviewSliceDefault;
+
+/**
+ * UserReview Shared Slice
+ *
+ * - **API ID**: `user_review`
+ * - **Description**: UserReview
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type UserReviewSlice = prismic.SharedSlice<
+  "user_review",
+  UserReviewSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -753,6 +834,11 @@ declare module "@prismicio/client" {
       TeamSliceDefaultItem,
       TeamSliceVariation,
       TeamSliceDefault,
+      UserReviewSlice,
+      UserReviewSliceDefaultPrimary,
+      UserReviewSliceDefaultItem,
+      UserReviewSliceVariation,
+      UserReviewSliceDefault,
     };
   }
 }

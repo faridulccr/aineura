@@ -67,13 +67,13 @@ const Team = ({ slice }: TeamProps): JSX.Element => {
                 </div>
 
                 <button
-                    className="angle-btn left-1/2 -translate-x-8 sm:left-2 sm:translate-x-0"
+                    className="angle-btn bottom-[20px] sm:top-[56%] left-1/2 sm:left-2 -translate-x-8 sm:translate-x-0"
                     value={"previous"}
                 >
                     <Image src={angleLeft} alt="left angle bracket" />
                 </button>
                 <button
-                    className="angle-btn right-1/2 translate-x-8 sm:right-5 sm:translate-x-0"
+                    className="angle-btn bottom-[20px] sm:top-[56%] right-1/2 sm:right-5 translate-x-8 sm:translate-x-0"
                     value={"next"}
                 >
                     <Image src={angleRight} alt="right angle bracket" />

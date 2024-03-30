@@ -1,0 +1,80 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Quickly"
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"comments",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Do aliquip officia adipisicing nulla occaecat fugiat aliqua id et. Amet exercitation culpa incididunt incididunt aliquip deserunt eu sit in deserunt et adipisicing."
+									}
+								}
+							]
+						}
+					],
+					[
+						"customer_image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+								"width": 3456,
+								"height": 4320
+							},
+							"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+							"width": 3456,
+							"height": 4320,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"customer_info",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Culpa veniam voluptate tempor ea. Dolore officia cillum sit aute id id commodo sint nulla non. Nulla eiusmod ipsum do cupidatat proident nisi aliquip fugiat."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]
