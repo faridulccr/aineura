@@ -40,12 +40,7 @@ const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
                     field={slice.primary.btn}
                 />
             </PrismicNextLink> */}
-            <div
-                onClick={() => {
-                    console.log("click");
-                }}
-                className="w-fit mx-auto"
-            >
+            <div className="w-fit mx-auto">
                 <FnKnowTbn url="/" />
             </div>
         </section>
