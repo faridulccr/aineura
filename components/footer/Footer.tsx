@@ -1,12 +1,11 @@
-import { createClient } from "@/prismicio";
+import { SettingsDocumentData, Simplify } from "@/prismicio-types";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+
 import FooterLink from "./FooterLink";
 
-const Footer = async () => {
-    const client = createClient();
-    const setting = await client.getSingle("settings");
-    const { data } = setting;
+type Props = { data: Simplify<SettingsDocumentData> };
 
+const Footer = ({ data }: Props) => {
     return (
         <footer className="font-glory bg-[#0E0E0E] text-white py-5 px-5 md:px-16 font-[400]">
             <section className="grid grid-cols-2 xs:flex items-start justify-between gap-5 flex-wrap">

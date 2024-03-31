@@ -1,5 +1,3 @@
-import angleLeft from "@/public/icons/angle-left-solid.svg";
-import angleRight from "@/public/icons/angle-right-solid.svg";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import {
@@ -8,6 +6,9 @@ import {
     SliceComponentProps,
 } from "@prismicio/react";
 import Image from "next/image";
+
+import angleLeft from "@/public/icons/angle-left-solid.svg";
+import angleRight from "@/public/icons/angle-right-solid.svg";
 
 /**
  * Props for `Team`.
@@ -23,6 +24,14 @@ const components: JSXMapSerializer = {
     ),
 };
 
+const content: JSXMapSerializer = {
+    paragraph: ({ children }) => (
+        <p className="text-lg leading-[26px] sm:w-3/4 md:w-1/2 mx-auto">
+            {children}
+        </p>
+    ),
+};
+
 const Team = ({ slice }: TeamProps): JSX.Element => {
     return (
         <section
@@ -34,13 +43,7 @@ const Team = ({ slice }: TeamProps): JSX.Element => {
                 <PrismicRichText field={slice.primary.heading} />
                 <PrismicRichText
                     field={slice.primary.content}
-                    components={{
-                        paragraph: ({ children }) => (
-                            <p className="text-lg leading-[26px] sm:w-3/4 md:w-1/2 mx-auto">
-                                {children}
-                            </p>
-                        ),
-                    }}
+                    components={content}
                 />
             </div>
             <div className="mx-auto w-[90vw] overflow-hidden">

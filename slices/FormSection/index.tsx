@@ -14,7 +14,9 @@ export type FormSectionProps = SliceComponentProps<Content.FormSectionSlice>;
 const components: JSXMapSerializer = {
     heading2: ({ children }) => <h2 style={{ margin: "0" }}>{children} </h2>,
     paragraph: ({ children }) => (
-        <p className="text-[#0E0E0E] text-base inline">{children} </p>
+        <p className="form-bottom-text text-[#0E0E0E] text-base inline">
+            {children}{" "}
+        </p>
     ),
 };
 
@@ -88,8 +90,11 @@ const FormSection = ({ slice }: FormSectionProps): JSX.Element => {
                     </button>
                 </div>
             </form>
-            <div className="form-bottom-text flex gap-2 justify-center items-center">
-                <PrismicRichText field={slice.primary.form_bottom_text} />
+            <div className="text-center">
+                <PrismicRichText
+                    field={slice.primary.form_bottom_text}
+                    components={components}
+                />
             </div>
         </section>
     );
