@@ -1,7 +1,7 @@
+import { createClient } from "@/prismicio";
 import { Metadata } from "next";
 
-import { createClient } from "@/prismicio";
-import Homepage from "./components/homepage/Homepage";
+import Homepage from "@/components/homepage/Homepage";
 
 export default async function Page() {
     const client = createClient();

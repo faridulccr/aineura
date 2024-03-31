@@ -1,8 +1,8 @@
+import Footer from "@/components/footer/Footer";
+import Header from "@/components/header/Header";
 import clsx from "clsx";
 import type { Metadata } from "next";
 import { Glory } from "next/font/google";
-import Footer from "./components/footer/Footer";
-import Header from "./components/header/Header";
 import "./globals.css";
 
 const glory = Glory({
