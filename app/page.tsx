@@ -1,23 +1,11 @@
 "use client";
 import { SliceZone } from "@prismicio/react";
 
-import { createClient } from "@/prismicio";
+import usePrismicPage from "@/lib/prismic/usePrismicPage";
 import { components } from "@/slices";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-    const [page, setPage]: [any, Function] = useState();
-    const [loading, setLoading]: [boolean, Function] = useState(true);
-    useEffect(() => {
-        const getPrismicPage = async () => {
-            setLoading(true);
-            const client = createClient();
-            const page = await client.getSingle("homepage");
-            setPage(page);
-            setLoading(false);
-        };
-        getPrismicPage();
-    }, []);
+    const [loading, page] = usePrismicPage("homepage");
 
     return (
         <main>
