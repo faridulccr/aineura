@@ -1,4 +1,4 @@
-import FnKnowTbn from "@/app/components/FnKnowTbn";
+import FnKnowTbn from "@/app/components/FnKnowBtn";
 import { Content } from "@prismicio/client";
 import {
     JSXMapSerializer,

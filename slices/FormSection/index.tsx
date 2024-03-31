@@ -80,15 +80,3 @@ const FormSection = ({ slice }: FormSectionProps): JSX.Element => {
 };
 
 export default FormSection;
-function linkResolver(
-    data:
-        | import("@prismicio/types").FilledContentRelationshipField<
-              string,
-              string,
-              unknown
-          >
-        | import("@prismicio/types").FilledLinkToWebField
-        | import("@prismicio/types").FilledLinkToMediaField
-) {
-    throw new Error("Function not implemented.");
-}

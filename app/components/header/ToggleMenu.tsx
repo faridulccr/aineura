@@ -5,7 +5,7 @@ import menu_icon from "@/public/icons/menu.png";
 import { PrismicNextLink } from "@prismicio/next";
 import Image from "next/image";
 import { useState } from "react";
-import FnKnowTbn from "../FnKnowTbn";
+import FnKnowTbn from "../FnKnowBtn";
 
 const ToggleMenu = ({ links, logo }: { links: any; logo: any }) => {
     const [isToggle, setIsToggle] = useState(false);
