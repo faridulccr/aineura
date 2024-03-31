@@ -4,6 +4,7 @@ import {
     PrismicRichText,
     SliceComponentProps,
 } from "@prismicio/react";
+import { useState } from "react";
 
 /**
  * Props for `FormSection`.
@@ -18,6 +19,18 @@ const components: JSXMapSerializer = {
 };
 
 const FormSection = ({ slice }: FormSectionProps): JSX.Element => {
+    const [loading, setLoading] = useState<boolean>(false);
+    const [error, setError] = useState<string | null>(null);
+
+    const handleSubmit = async (formData: FormData) => {
+        const name = formData.get("name");
+        const number = formData.get("number");
+        const email = formData.get("email");
+        const message = formData.get("message");
+
+        console.log({ name, number, email, message });
+    };
+
     return (
         <section
             data-slice-type={slice.slice_type}
@@ -30,7 +43,10 @@ const FormSection = ({ slice }: FormSectionProps): JSX.Element => {
                     components={components}
                 />
             </div>
-            <form className="w-[95vw] sm:w-[85vw] md:w-[75vw] lg:w-[65vw] mx-auto">
+            <form
+                className="w-[95vw] sm:w-[85vw] md:w-[75vw] lg:w-[65vw] mx-auto"
+                action={handleSubmit}
+            >
                 <div className=" flex justify-center items-center mx-auto gap-2 mb-2">
                     <input
                         className="border border-[#D3D3D3DD] px-4 py-3 md:px-6 md:py-5 rounded-lg w-[48%] focus:outline-none"
