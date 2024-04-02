@@ -531,6 +531,16 @@ export interface BannerSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   small_banner: prismic.ImageField<never>;
+
+  /**
+   * ainera text logo field in *Banner → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner.primary.ainera_text_logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  ainera_text_logo: prismic.ImageField<never>;
 }
 
 /**

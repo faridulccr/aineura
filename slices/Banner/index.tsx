@@ -13,7 +13,7 @@ export type BannerProps = SliceComponentProps<Content.BannerSlice>;
 
 const heading: JSXMapSerializer = {
     heading2: ({ children }) => (
-        <h2 className="text-[30px] sm:text-[38px] md:text-[42px] lg:text-[50px] font-[400] inline">
+        <h2 className="text-[20px] xs:text-[30px] md:text-[38px] lg:text-[50px] font-[400] inline">
             {children}{" "}
         </h2>
     ),
@@ -35,12 +35,18 @@ const Banner = ({ slice }: BannerProps): JSX.Element => {
                 field={slice.primary.small_banner}
             />
             <div className="absolute w-full h-full top-0 left-0 right-0 z-1 text-white flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-20 lg:px-40 gap-7 md:gap-20 2xl:gap-40">
-                <PrismicNextImage
-                    className="w-[182px] h-[250px] lg:w-[250px] lg:h-[350px]"
-                    field={slice.primary.aineura_logo}
-                />
+                <div className="flex flex-col items-center mt-10 sm:mt-0 md:w-[70vw] lg:w-[70vw]">
+                    <PrismicNextImage
+                        className="min-w-[154px] min-h-[212px] xs:min-w-[180px] xs:min-h-[248px] md:min-w-[283px] md:h-[388px]"
+                        field={slice.primary.aineura_logo}
+                    />
+                    <PrismicNextImage
+                        className="mt-[-40px]"
+                        field={slice.primary.ainera_text_logo}
+                    />
+                </div>
 
-                <div className="banner-content xl:w-1/2 2xl:px-10 text-center md:text-start leading-[50px] lg:leading-[62px]">
+                <div className="banner-content 2xl:px-10 text-center md:text-start leading-[20px] xs:leading-[50px] lg:leading-[62px]">
                     <PrismicRichText
                         field={slice.primary.content}
                         components={heading}
@@ -48,7 +54,7 @@ const Banner = ({ slice }: BannerProps): JSX.Element => {
                 </div>
             </div>
             <PrismicNextLink
-                className="absolute bottom-20 sm:bottom-16 right-6 md:right-10"
+                className="absolute bottom-5 xs:bottom-18 sm:bottom-16 right-6 md:right-10"
                 field={slice.primary.bot_link}
             >
                 <PrismicNextImage field={slice.primary.bot_logo} />

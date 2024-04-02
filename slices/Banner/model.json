@@ -60,6 +60,14 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "ainera_text_logo": {
+          "type": "Image",
+          "config": {
+            "label": "ainera text logo",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}
