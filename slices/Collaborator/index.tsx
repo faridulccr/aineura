@@ -30,7 +30,7 @@ const Collaborator = ({ slice }: CollaboratorProps): JSX.Element => {
                     {slice.items.map(({ image }, i) => (
                         <div key={i} className="w-[40vw] sm:w-[28vw] lg:w-full">
                             <PrismicNextImage
-                                className="w-[135px] h-[30px] xs:h-[45px] mx-auto"
+                                className="max-w-[100%] h-[50px] mx-auto"
                                 field={image}
                             />
                         </div>
