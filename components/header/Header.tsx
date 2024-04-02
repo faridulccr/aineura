@@ -18,7 +18,7 @@ const Header = ({ data }: Props) => {
         // <header className="fixed w-full max-w-[1440px] top-0 left-0 right-0 mx-auto z-50">
         <header className="absolute top-0 left-0 z-10 w-full max-w-[2040px] mx-auto">
             <nav
-                className={`font-glory flex ${isToggle ? "flex-col h-screen backdrop-blur-lg" : "flex-row justify-between"} items-center text-white px-5 sm:px-12 md:px-20 py-3 gap-5`}
+                className={`font-glory flex ${isToggle ? "flex-col h-screen backdrop-blur-lg" : "flex-row justify-between"} md:items-center text-white px-5 sm:px-12 md:px-20 py-3 gap-5`}
             >
                 <div>
                     <button
@@ -44,7 +44,7 @@ const Header = ({ data }: Props) => {
                     </ul>
                 </div>
 
-                <FnKnowTbn url="/" logo={data.fnknow_logo} />
+                <FnKnowTbn />
             </nav>
         </header>
     );

@@ -52,6 +52,14 @@
             "allowTargetBlank": false,
             "multi": "heading2"
           }
+        },
+        "small_banner": {
+          "type": "Image",
+          "config": {
+            "label": "small banner",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}

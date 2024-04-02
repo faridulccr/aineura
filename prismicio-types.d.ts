@@ -268,17 +268,6 @@ interface SettingsDocumentData {
   nav_menu: prismic.GroupField<Simplify<SettingsDocumentDataNavMenuItem>>;
 
   /**
-   * FnKnow logo field in *settings*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: settings.fnknow_logo
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  fnknow_logo: prismic.ImageField<never>;
-
-  /**
    * company link field in *settings*
    *
    * - **Field Type**: Group
@@ -362,6 +351,28 @@ interface SettingsDocumentData {
   footer_media_link: prismic.GroupField<
     Simplify<SettingsDocumentDataFooterMediaLinkItem>
   >;
+
+  /**
+   * fnknow label field in *settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.fnknow_label
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  fnknow_label: prismic.KeyTextField;
+
+  /**
+   * fnknow link field in *settings*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.fnknow_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  fnknow_link: prismic.LinkField;
 }
 
 /**
@@ -510,6 +521,16 @@ export interface BannerSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
+
+  /**
+   * small banner field in *Banner → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner.primary.small_banner
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  small_banner: prismic.ImageField<never>;
 }
 
 /**

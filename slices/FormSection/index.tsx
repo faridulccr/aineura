@@ -35,6 +35,7 @@ const FormSection = ({ slice }: FormSectionProps): JSX.Element => {
 
     return (
         <section
+            id="contact-us"
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
             className="py-16"

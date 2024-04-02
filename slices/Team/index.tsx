@@ -35,6 +35,7 @@ const content: JSXMapSerializer = {
 const Team = ({ slice }: TeamProps): JSX.Element => {
     return (
         <section
+            id="team"
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
             className="py-12 relative"

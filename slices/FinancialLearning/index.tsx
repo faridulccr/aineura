@@ -26,6 +26,7 @@ const components: JSXMapSerializer = {
 const FinancialLearning = ({ slice }: FinancialLearningProps): JSX.Element => {
     return (
         <section
+            id="product"
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
             className="sm:px-5 lg:px-12 bg-white"

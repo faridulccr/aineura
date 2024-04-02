@@ -22,6 +22,7 @@ const components: JSXMapSerializer = {
 const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
     return (
         <section
+            id="about"
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
             className="py-12 px-5 sm:px-8 lg:px-12 bg-white text-center"
@@ -41,7 +42,7 @@ const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
                 />
             </PrismicNextLink> */}
             <div className="w-fit mx-auto">
-                <FnKnowTbn url="/" />
+                <FnKnowTbn />
             </div>
         </section>
     );

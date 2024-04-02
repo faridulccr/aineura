@@ -30,14 +30,6 @@
           }
         }
       },
-      "fnknow_logo": {
-        "type": "Image",
-        "config": {
-          "label": "FnKnow logo",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
       "company_link": {
         "type": "Group",
         "config": {
@@ -189,6 +181,21 @@
               }
             }
           }
+        }
+      },
+      "fnknow_label": {
+        "type": "Text",
+        "config": {
+          "label": "fnknow label",
+          "placeholder": ""
+        }
+      },
+      "fnknow_link": {
+        "type": "Link",
+        "config": {
+          "label": "fnknow link",
+          "placeholder": "",
+          "select": null
         }
       }
     }

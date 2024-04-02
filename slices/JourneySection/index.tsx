@@ -31,7 +31,7 @@ const JourneySection = ({ slice }: JourneySectionProps): JSX.Element => {
                     {slice.primary.subtitle}
                 </p>
                 <div className="w-fit mx-auto mt-5">
-                    <FnKnowTbn url="/" />
+                    <FnKnowTbn />
                 </div>
             </div>
         </section>
