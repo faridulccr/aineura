@@ -15,7 +15,7 @@ export type BannerProps = SliceComponentProps<Content.BannerSlice>;
 
 const heading: JSXMapSerializer = {
     heading2: ({ children }) => (
-        <h2 className="text-[38px] lg:text-[50px] font-[400] inline">
+        <h2 className="text-[30px] sm:text-[38px] md:text-[42px] lg:text-[50px] font-[400] inline">
             {children}{" "}
         </h2>
     ),
@@ -32,13 +32,13 @@ const Banner = ({ slice }: BannerProps): JSX.Element => {
                 className="h-screen w-full"
                 field={slice.primary.banner}
             />
-            <div className="absolute w-full h-full top-0 left-0 right-0 z-1 text-white flex flex-col lg:flex-row items-center justify-center lg:justify-between px-6 lg:px-40 gap-7 lg:gap-20 2xl:gap-40">
+            <div className="absolute w-full h-full top-0 left-0 right-0 z-1 text-white flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-20 lg:px-40 gap-7 md:gap-20 2xl:gap-40">
                 <PrismicNextImage
                     className="w-[182px] h-[250px] lg:w-[250px] lg:h-[350px]"
                     field={slice.primary.aineura_logo}
                 />
 
-                <div className="banner-content xl:w-1/2 2xl:px-10 text-center lg:text-start leading-[50px] lg:leading-[62px]">
+                <div className="banner-content xl:w-1/2 2xl:px-10 text-center md:text-start leading-[50px] lg:leading-[62px]">
                     <PrismicRichText
                         field={slice.primary.content}
                         components={heading}

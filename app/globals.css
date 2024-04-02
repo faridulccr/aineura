@@ -17,7 +17,7 @@
 body {
   color: var(--global-text-color);
   background: var(--background-color);
-  max-width: 1440px;
+  max-width: 2040px;
   margin: 0 auto;
   overflow: hidden;
   overflow-y: auto;

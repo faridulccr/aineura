@@ -16,9 +16,9 @@ const Header = ({ data }: Props) => {
 
     return (
         // <header className="fixed w-full max-w-[1440px] top-0 left-0 right-0 mx-auto z-50">
-        <header className="absolute top-0 left-0 z-10 w-full">
+        <header className="absolute top-0 left-0 z-10 w-full max-w-[2040px] mx-auto">
             <nav
-                className={`font-glory flex ${isToggle ? "flex-col h-screen backdrop-blur-lg" : "flex-row justify-between"} text-white px-5 sm:px-12 md:px-20 py-3 gap-5`}
+                className={`font-glory flex ${isToggle ? "flex-col h-screen backdrop-blur-lg" : "flex-row justify-between"} items-center text-white px-5 sm:px-12 md:px-20 py-3 gap-5`}
             >
                 <div>
                     <button
@@ -29,12 +29,12 @@ const Header = ({ data }: Props) => {
                         {isToggle && <Image src={cross_icon} alt="cross" />}
                     </button>
                     <ul
-                        className={`${isToggle ? "flex" : "hidden"} md:flex flex-col md:flex-row md:items-center gap-6`}
+                        className={`${isToggle ? "flex" : "hidden"} md:flex flex-col md:flex-row md:items-center gap-6 lg:gap-14`}
                     >
                         {data.nav_menu.map(({ link, link_text }, i) => (
                             <li onClick={() => setIsToggle(false)} key={i}>
                                 <PrismicNextLink
-                                    className="text-xl leading-6 font-[400]"
+                                    className="text-xl lg:text-2xl leading-6 font-[400]"
                                     field={link}
                                 >
                                     {link_text}

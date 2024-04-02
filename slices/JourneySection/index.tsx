@@ -20,7 +20,7 @@ const JourneySection = ({ slice }: JourneySectionProps): JSX.Element => {
             className="relative"
         >
             <PrismicNextImage
-                className="w-full h-auto min-h-[200px]"
+                className="w-full min-h-[200px] lg:max-h-[300px]"
                 field={slice.primary.background}
             />
             <div className="w-full absolute top-1/2 transform -translate-y-1/2 text-white text-center">

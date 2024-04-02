@@ -19,7 +19,7 @@ export type UserReviewProps = SliceComponentProps<Content.UserReviewSlice>;
 
 const content: JSXMapSerializer = {
     paragraph: ({ children }) => (
-        <p className="mb-5 text-sm md:text-lg leading-6 pr-4 font-[400]">
+        <p className="mb-5 text-sm lg:text-lg leading-6 pr-4 font-[400]">
             {children}
         </p>
     ),
@@ -40,7 +40,7 @@ const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
             data-slice-variation={slice.variation}
             className="mb-10"
         >
-            <div className="md:bg-[#f4f3f8] rounded-3xl pt-10 pb-16 md:w-[90vw] md:mx-auto relative">
+            <div className="bg-[#f4f3f8] px-[5vw] md:px-0 rounded-3xl pt-10 pb-16 md:w-[90vw] md:mx-auto relative">
                 <div className="heading text-center">
                     <PrismicRichText field={slice.primary.heading} />
                 </div>
@@ -52,7 +52,7 @@ const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
                                 i
                             ) => (
                                 <div
-                                    className="bg-white rounded-[22px] w-screen md:w-[38vw] p-10 pr-16 md:pr-10"
+                                    className="bg-white rounded-[22px] w-[90vw] md:w-[38vw] p-10 pr-16 md:pr-10"
                                     key={i}
                                 >
                                     <div className="relative">
