@@ -26,10 +26,10 @@ const Banner = ({ slice }: BannerProps): JSX.Element => {
         <section
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
-            className="relative font-glory"
+            className="relative font-glory overflow-hidden h-screen"
         >
             <PrismicNextImage
-                className="h-screen w-full"
+                className="absolute top-0 left-0 h-screen w-[150%] sm:w-full"
                 field={slice.primary.banner}
             />
             <div className="absolute w-full h-full top-0 left-0 right-0 z-1 text-white flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-20 lg:px-40 gap-7 md:gap-20 2xl:gap-40">
@@ -46,7 +46,7 @@ const Banner = ({ slice }: BannerProps): JSX.Element => {
                 </div>
             </div>
             <PrismicNextLink
-                className="absolute bottom-6 md:bottom-20 right-6 md:right-10"
+                className="absolute bottom-12 md:bottom-20 right-6 md:right-10"
                 field={slice.primary.bot_link}
             >
                 <PrismicNextImage field={slice.primary.bot_logo} />

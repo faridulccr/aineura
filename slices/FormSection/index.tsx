@@ -14,7 +14,7 @@ export type FormSectionProps = SliceComponentProps<Content.FormSectionSlice>;
 const components: JSXMapSerializer = {
     heading2: ({ children }) => <h2 style={{ margin: "0" }}>{children} </h2>,
     paragraph: ({ children }) => (
-        <p className="form-bottom-text text-[#0E0E0E] text-base inline">
+        <p className="form-bottom-text text-[#0E0E0E] text-xs sm:text-base inline">
             {children}{" "}
         </p>
     ),

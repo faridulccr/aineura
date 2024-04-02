@@ -7,8 +7,8 @@ type Props = { data: Simplify<SettingsDocumentData> };
 
 const Footer = ({ data }: Props) => {
     return (
-        <footer className="font-glory bg-[#0E0E0E] text-white py-5 px-5 md:px-16 font-[400]">
-            <section className="grid grid-cols-2 xs:flex items-start justify-between gap-5 flex-wrap">
+        <footer className="font-glory bg-[#0E0E0E] text-white py-5 px-5 md:px-16 font-[400] pt-12">
+            <section className="grid grid-cols-2 xs:flex items-start justify-between gap-5 flex-wrap xl:mr-40">
                 <div className=" col-span-2 xs:w-full md:w-auto">
                     <PrismicNextLink field={data.footer_logo[0]?.link}>
                         <PrismicNextImage
@@ -24,7 +24,7 @@ const Footer = ({ data }: Props) => {
                 <FooterLink title="Legal" links={data.legal_link} />
             </section>
 
-            <hr className=" border-0 border-t border-[#667085] mx-auto mt-4" />
+            <hr className=" border-0 border-t border-[#1f2124] mx-auto mt-4" />
             <div className="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between mt-4">
                 <p className="text-[#98A2B3] text-lg md:text-sm lg:text-lg text-center">
                     {data.copyright}

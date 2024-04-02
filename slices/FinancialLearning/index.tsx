@@ -19,7 +19,7 @@ const components: JSXMapSerializer = {
         </h2>
     ),
     paragraph: ({ children }) => (
-        <p className="text-xs md:text-lg mb-5">{children}</p>
+        <p className="text-xs lg:text-lg mb-5">{children}</p>
     ),
 };
 
@@ -31,13 +31,13 @@ const FinancialLearning = ({ slice }: FinancialLearningProps): JSX.Element => {
             className="sm:px-5 lg:px-12 bg-white"
         >
             <div className="bg-[#fcf6ff] py-20 px-5 sm:px-11 rounded-3xl flex flex-col md:flex-row md:justify-between md:items-center gap-5">
-                <div className="relative mx-auto max-w-[480px] md:w-[40%] h-[300px] sm:h-[380px]">
+                <div className="relative mx-auto max-w-[480px] lg:w-[45%] h-[300px] sm:h-[380px]">
                     <PrismicNextImage
                         className="w-full h-full"
                         field={slice.primary.bot_bg_image}
                     />
                     <PrismicNextImage
-                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120px] h-[110px] md:w-[110px] md:lg-[90px] lg:w-[160px] lg:h-[140px]"
+                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120px] h-[110px] md:w-[110px] md:h-[90px] lg:w-[160px] lg:h-[140px]"
                         field={slice.primary.bot_iimage}
                     />
                 </div>
