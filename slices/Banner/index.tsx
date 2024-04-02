@@ -1,5 +1,3 @@
-"use client";
-
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import {
