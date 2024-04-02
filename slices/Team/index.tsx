@@ -9,6 +9,7 @@ import Image from "next/image";
 
 import angleLeft from "@/public/icons/angle-left-solid.svg";
 import angleRight from "@/public/icons/angle-right-solid.svg";
+import { useState } from "react";
 
 /**
  * Props for `Team`.
@@ -33,6 +34,50 @@ const content: JSXMapSerializer = {
 };
 
 const Team = ({ slice }: TeamProps): JSX.Element => {
+    const [margin, setMargin] = useState<number>(0);
+    const [currentIndex, setCurrentIndex] = useState<number>(1);
+    const numberOfItems = slice.items.length;
+
+    const previous = () => {
+        const width = window.innerWidth;
+        if (width < 640) {
+            if (currentIndex > 1) {
+                setMargin((prev) => prev + 94);
+                setCurrentIndex((prev) => prev - 1);
+            }
+        } else if (width < 1024) {
+            if (currentIndex > 1) {
+                setMargin((prev) => prev + 93);
+                setCurrentIndex((prev) => prev - 1);
+            }
+        } else if (width >= 1024) {
+            if (currentIndex > 1) {
+                setMargin((prev) => prev + 93.2);
+                setCurrentIndex((prev) => prev - 1);
+            }
+        }
+    };
+
+    const next = () => {
+        const width = window.innerWidth;
+        if (width < 640) {
+            if (currentIndex < numberOfItems / 2) {
+                setMargin((prev) => prev - 94);
+                setCurrentIndex((prev) => prev + 1);
+            }
+        } else if (width < 1024) {
+            if (currentIndex < numberOfItems / 3) {
+                setMargin((prev) => prev - 93);
+                setCurrentIndex((prev) => prev + 1);
+            }
+        } else if (width >= 1024) {
+            if (currentIndex < numberOfItems / 4) {
+                setMargin((prev) => prev - 93.2);
+                setCurrentIndex((prev) => prev + 1);
+            }
+        }
+    };
+
     return (
         <section
             id="team"
@@ -48,7 +93,13 @@ const Team = ({ slice }: TeamProps): JSX.Element => {
                 />
             </div>
             <div className="mx-auto w-[90vw] overflow-hidden">
-                <div className="mt-6 flex gap-[4vw] sm:gap-[3vw] lg:gap-[3.2vw] justify-between w-fit">
+                <div
+                    style={{
+                        marginLeft: margin + "vw",
+                        transition: "0.3s",
+                    }}
+                    className="mt-6 flex gap-[4vw] sm:gap-[3vw] lg:gap-[3.2vw] justify-between w-fit"
+                >
                     {slice.items.map(({ teammate, info }, i) => (
                         <div
                             key={i}
@@ -68,12 +119,14 @@ const Team = ({ slice }: TeamProps): JSX.Element => {
                 </div>
             </div>
             <button
+                onClick={previous}
                 className="angle-btn bottom-[20px] sm:top-[56%] left-1/2 sm:left-2 -translate-x-8 sm:translate-x-0"
                 value={"previous"}
             >
                 <Image src={angleLeft} alt="left angle bracket" />
             </button>
             <button
+                onClick={next}
                 className="angle-btn bottom-[20px] sm:top-[56%] right-1/2 sm:right-2 translate-x-8 sm:translate-x-0"
                 value={"next"}
             >

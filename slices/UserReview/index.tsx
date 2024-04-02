@@ -12,6 +12,7 @@ import angleRight from "@/public/icons/angle-right-solid.svg";
 import half_circle from "@/public/icons/half-circle.png";
 import bottom_quote from "@/public/icons/quote.png";
 import top_quote from "@/public/icons/white-qoute.png";
+import { useState } from "react";
 /**
  * Props for `UserReview`.
  */
@@ -34,6 +35,40 @@ const info: JSXMapSerializer = {
 };
 
 const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
+    const [margin, setMargin] = useState<number>(0);
+    const [currentIndex, setCurrentIndex] = useState<number>(1);
+    const numberOfItems = slice.items.length;
+
+    const previous = () => {
+        const width = window.innerWidth;
+        if (width < 768) {
+            if (currentIndex > 1) {
+                setMargin((prev) => prev + 90);
+                setCurrentIndex((prev) => prev - 1);
+            }
+        } else if (width >= 768) {
+            if (currentIndex > 1) {
+                setMargin((prev) => prev + 84);
+                setCurrentIndex((prev) => prev - 1);
+            }
+        }
+    };
+
+    const next = () => {
+        const width = window.innerWidth;
+        if (width < 768) {
+            if (currentIndex < numberOfItems) {
+                setMargin((prev) => prev - 90);
+                setCurrentIndex((prev) => prev + 1);
+            }
+        } else if (width >= 768) {
+            if (currentIndex < numberOfItems / 2) {
+                setMargin((prev) => prev - 84);
+                setCurrentIndex((prev) => prev + 1);
+            }
+        }
+    };
+
     return (
         <section
             data-slice-type={slice.slice_type}
@@ -45,50 +80,51 @@ const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
                     <PrismicRichText field={slice.primary.heading} />
                 </div>
                 <div className="overflow-hidden md:w-[80vw] md:mx-auto">
-                    <div className="flex md:gap-[4vw] mt-5 sticky z-10 w-fit">
-                        {slice.items.map(
-                            (
-                                { comments, customer_image, customer_info },
-                                i
-                            ) => (
-                                <div
-                                    className="bg-white rounded-[22px] w-[90vw] md:w-[38vw] p-10 pr-16 md:pr-10"
-                                    key={i}
-                                >
-                                    <div className="relative">
-                                        <div className="sticky z-10">
-                                            <PrismicRichText
-                                                field={comments}
-                                                components={content}
-                                            />
-                                        </div>
-
-                                        <Image
-                                            className="absolute -top-3 -left-4 w-7 h-7 z-0"
-                                            src={top_quote}
-                                            alt="top quote"
-                                        />
-                                        <Image
-                                            className="absolute -bottom-4 -right-4 w-7 h-7"
-                                            src={bottom_quote}
-                                            alt="bottom quote"
+                    <div
+                        style={{
+                            marginLeft: margin + "vw",
+                            transition: "0.3s",
+                        }}
+                        className="flex md:gap-[4vw] mt-5 sticky z-10 w-fit"
+                    >
+                        {slice.items.map((item, i) => (
+                            <div
+                                className="bg-white rounded-[22px] w-[90vw] md:w-[38vw] p-10 pr-16 md:pr-10"
+                                key={i}
+                            >
+                                <div className="relative">
+                                    <div className="sticky z-10">
+                                        <PrismicRichText
+                                            field={item.comments}
+                                            components={content}
                                         />
                                     </div>
-                                    <div className="flex items-center gap-4">
-                                        <PrismicNextImage
-                                            className="w-16 h-16 rounded-full"
-                                            field={customer_image}
+
+                                    <Image
+                                        className="absolute -top-3 -left-4 w-7 h-7 z-0"
+                                        src={top_quote}
+                                        alt="top quote"
+                                    />
+                                    <Image
+                                        className="absolute -bottom-4 -right-4 w-7 h-7"
+                                        src={bottom_quote}
+                                        alt="bottom quote"
+                                    />
+                                </div>
+                                <div className="flex items-center gap-4">
+                                    <PrismicNextImage
+                                        className="w-16 h-16 rounded-full"
+                                        field={item.customer_image}
+                                    />
+                                    <div>
+                                        <PrismicRichText
+                                            field={item.customer_info}
+                                            components={info}
                                         />
-                                        <div>
-                                            <PrismicRichText
-                                                field={customer_info}
-                                                components={info}
-                                            />
-                                        </div>
                                     </div>
                                 </div>
-                            )
-                        )}
+                            </div>
+                        ))}
                     </div>
                 </div>
 
@@ -100,12 +136,14 @@ const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
                 />
 
                 <button
+                    onClick={previous}
                     className="angle-btn bottom-[20px] left-1/2 -translate-x-8 md:bg-white"
                     value={"previous"}
                 >
                     <Image src={angleLeft} alt="left angle bracket" />
                 </button>
                 <button
+                    onClick={next}
                     className="angle-btn bottom-[20px] right-1/2 translate-x-8 md:bg-white"
                     value={"next"}
                 >
