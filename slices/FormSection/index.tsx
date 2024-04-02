@@ -26,12 +26,11 @@ const FormSection = ({ slice }: FormSectionProps): JSX.Element => {
     const [error, setError] = useState<string | null>(null);
 
     const handleSubmit = async (formData: FormData) => {
-        const name = formData.get("name");
-        const number = formData.get("number");
-        const email = formData.get("email");
-        const message = formData.get("message");
-
-        console.log({ name, number, email, message });
+        // const name = formData.get("name");
+        // const number = formData.get("number");
+        // const email = formData.get("email");
+        // const message = formData.get("message");
+        // console.log({ name, number, email, message });
     };
 
     return (
