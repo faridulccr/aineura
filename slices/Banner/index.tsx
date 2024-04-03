@@ -37,11 +37,11 @@ const Banner = ({ slice }: BannerProps): JSX.Element => {
             <div className="absolute w-full h-full top-0 left-0 right-0 z-1 text-white flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-20 lg:px-40 gap-7 md:gap-20 2xl:gap-40">
                 <div className="flex flex-col items-center mt-10 sm:mt-0 md:w-[70vw] lg:w-[70vw]">
                     <PrismicNextImage
-                        className="min-w-[154px] min-h-[212px] xs:min-w-[180px] xs:min-h-[248px] md:min-w-[283px] md:h-[388px]"
+                        className="min-w-[154px] min-h-[212px] xs:min-w-[180px] xs:min-h-[248px] md:min-w-[283px] md:h-[388px] -mt-12"
                         field={slice.primary.aineura_logo}
                     />
                     <PrismicNextImage
-                        className="mt-[-40px]"
+                        className="-mt-16 max-w-[154px] xs:max-w-[180px] md:max-w-[283px]"
                         field={slice.primary.ainera_text_logo}
                     />
                 </div>
