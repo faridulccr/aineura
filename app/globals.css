@@ -21,11 +21,12 @@ body {
   margin: 0 auto;
   overflow: hidden;
   overflow-y: auto;
+  position: relative;
 }
 
 @layer components {
   .heading h2 {
-    @apply text-[28px] sm:text-[34px] lg:text-[40px] inline
+    @apply text-[28px] sm:text-[34px] lg:text-[40px] inline font-[600]
   }
 
   .heading h2:nth-of-type(even) {
@@ -64,5 +65,19 @@ body {
 
   .form-bottom-text a {
     color: #5200BB;
+  }
+}
+
+.moving-div {
+  position: relative;
+  animation: moveLeftToRight 12s linear infinite;
+}
+
+@keyframes moveLeftToRight {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%; /* Adjust this value according to your container width and div size */
   }
 }

@@ -14,7 +14,7 @@ export type FinancialLearningProps =
 
 const components: JSXMapSerializer = {
     heading2: ({ children }) => (
-        <h2 style={{ margin: "0" }} className="leading-10 font-[400]">
+        <h2 style={{ margin: "0" }} className="leading-10 font-[600]">
             {children}{" "}
         </h2>
     ),
@@ -32,9 +32,9 @@ const FinancialLearning = ({ slice }: FinancialLearningProps): JSX.Element => {
             className="sm:px-5 lg:px-12 bg-white"
         >
             <div className="bg-[#fcf6ff] py-20 px-5 sm:px-11 rounded-3xl flex flex-col md:flex-row md:justify-between md:items-center gap-5">
-                <div className="relative mx-auto max-w-[480px] lg:w-[45%] h-[300px] sm:h-[380px]">
+                <div className="relative mx-auto md:mx-0 w-fit">
                     <PrismicNextImage
-                        className="w-full h-full"
+                        className="lg:w-[580px] lg:h-[500px]"
                         field={slice.primary.bot_bg_image}
                     />
                     <PrismicNextImage
@@ -65,7 +65,7 @@ const FinancialLearning = ({ slice }: FinancialLearningProps): JSX.Element => {
                                     className="w-6 h-6 md:w-8 md:h-8"
                                     field={icon}
                                 />
-                                <span className="text-xs md:text-bs font-semibold">
+                                <span className="text-xs xs:text-lg md:text-xs lg:text-lg font-semibold">
                                     {label}
                                 </span>
                             </div>
