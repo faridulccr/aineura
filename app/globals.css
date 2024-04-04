@@ -21,6 +21,7 @@ body {
   margin: 0 auto;
   overflow: hidden;
   overflow-y: auto;
+  transition: 0.5s ease;
 }
 
 @layer components {
