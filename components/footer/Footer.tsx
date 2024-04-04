@@ -7,7 +7,7 @@ type Props = { data: Simplify<SettingsDocumentData> };
 
 const Footer = ({ data }: Props) => {
     return (
-        <footer className="font-glory bg-[#0E0E0E] text-white py-5 px-5 md:px-16 font-[400] pt-12">
+        <footer className="font-glory bg-[#0E0E0E] text-white py-5 px-5 md:px-16 font-[400] pt-6 md:pt-12">
             <section className="grid grid-cols-3 xs:flex items-start justify-between gap-5 flex-wrap xl:mr-40">
                 <div className=" col-span-3 xs:w-full md:w-auto">
                     <PrismicNextLink field={data.footer_logo[0]?.link}>
@@ -20,8 +20,8 @@ const Footer = ({ data }: Props) => {
 
                 <FooterLink title="Company" links={data.company_link} />
                 <FooterLink title="Product" links={data.product_link} />
-                <FooterLink title="Resources" links={data.resources_link} />
                 <FooterLink title="Legal" links={data.legal_link} />
+                <FooterLink title="Resources" links={data.resources_link} />
             </section>
 
             <hr className=" border-0 border-t border-[#1f2124] mx-auto mt-4" />

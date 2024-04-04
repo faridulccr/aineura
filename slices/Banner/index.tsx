@@ -13,7 +13,7 @@ export type BannerProps = SliceComponentProps<Content.BannerSlice>;
 
 const heading: JSXMapSerializer = {
     heading2: ({ children }) => (
-        <h2 className="text-[20px] xs:text-[30px] md:text-[38px] lg:text-[50px] font-[400] inline">
+        <h2 className="text-[25px] xs:text-[30px] md:text-[38px] lg:text-[50px] font-[400] inline">
             {children}{" "}
         </h2>
     ),
@@ -24,20 +24,20 @@ const Banner = ({ slice }: BannerProps): JSX.Element => {
         <section
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
-            className="relative font-glory overflow-hidden h-screen"
+            className="relative font-glory overflow-hidden h-[95vh] md:h-[60vh] xl:h-screen"
         >
             <PrismicNextImage
-                className="h-screen w-full hidden sm:block"
+                className="h-full w-full hidden md:block"
                 field={slice.primary.banner}
             />
             <PrismicNextImage
-                className="h-screen w-full block sm:hidden"
+                className="h-full w-full block md:hidden"
                 field={slice.primary.small_banner}
             />
-            <div className="absolute w-full h-full top-0 left-0 right-0 z-1 text-white flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-20 lg:px-40 gap-7 md:gap-20 2xl:gap-40">
-                <div className="flex flex-col items-center mt-10 sm:mt-0 md:w-[70vw] lg:w-[70vw]">
+            <div className="absolute w-full h-full top-0 left-0 right-0 z-1 text-white flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-20 lg:px-40 gap-7 md:gap-24 lg:gap-44">
+                <div className="flex flex-col items-center">
                     <PrismicNextImage
-                        className="min-w-[154px] min-h-[212px] xs:min-w-[180px] xs:min-h-[248px] md:min-w-[283px] md:h-[388px] -mt-12"
+                        className="min-w-[154px] min-h-[212px] xs:min-w-[180px] xs:min-h-[248px] md:min-w-[283px] md:h-[388px] -mt-16"
                         field={slice.primary.aineura_logo}
                     />
                     <PrismicNextImage
@@ -46,7 +46,7 @@ const Banner = ({ slice }: BannerProps): JSX.Element => {
                     />
                 </div>
 
-                <div className="banner-content 2xl:px-10 text-center md:text-start leading-[20px] xs:leading-[50px] lg:leading-[62px]">
+                <div className="banner-content 2xl:px-10 text-center md:text-start leading-[30px] xs:leading-[50px] lg:leading-[62px]">
                     <PrismicRichText
                         field={slice.primary.content}
                         components={heading}

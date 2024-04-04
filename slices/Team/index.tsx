@@ -84,7 +84,7 @@ const Team = ({ slice }: TeamProps): JSX.Element => {
             id="team"
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
-            className="py-12 relative"
+            className="py-12 relative overflow-hidden"
         >
             <div className="heading text-center">
                 <PrismicRichText field={slice.primary.heading} />

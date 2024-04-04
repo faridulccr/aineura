@@ -74,7 +74,7 @@ const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
         <section
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
-            className="mb-10"
+            className="mb-10 overflow-hidden"
         >
             <div className="bg-[#f4f3f8] px-[5vw] md:px-0 rounded-3xl pt-10 pb-16 md:w-[90vw] md:mx-auto relative">
                 <div className="heading text-center">
