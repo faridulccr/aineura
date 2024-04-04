@@ -40,7 +40,7 @@ const FormSection = ({ slice }: FormSectionProps): JSX.Element => {
             data-slice-variation={slice.variation}
             className="py-16"
         >
-            <div className="heading mb-6 xs:w-[350px] sm:w-[400px] mx-auto text-center">
+            <div className="heading mb-6 xs:w-[350px] sm:w-[400px] md:w-[420px] mx-auto text-center">
                 <PrismicRichText
                     field={slice.primary.heading}
                     components={components}
