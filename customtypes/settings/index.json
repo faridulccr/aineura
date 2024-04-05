@@ -197,6 +197,14 @@
           "placeholder": "",
           "select": null
         }
+      },
+      "fnknow_btn_image": {
+        "type": "Image",
+        "config": {
+          "label": "FnKnow btn image",
+          "constraint": {},
+          "thumbnails": []
+        }
       }
     }
   }

@@ -373,6 +373,17 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   fnknow_link: prismic.LinkField;
+
+  /**
+   * FnKnow btn image field in *settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.fnknow_btn_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  fnknow_btn_image: prismic.ImageField<never>;
 }
 
 /**

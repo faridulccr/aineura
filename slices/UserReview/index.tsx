@@ -21,7 +21,7 @@ export type UserReviewProps = SliceComponentProps<Content.UserReviewSlice>;
 
 const content: JSXMapSerializer = {
     paragraph: ({ children }) => (
-        <p className="mb-5 text-sm lg:text-lg leading-6 pr-4 font-[400]">
+        <p className="mb-5 text-sm xl:text-lg leading-6 pr-4 font-[400]">
             {children}
         </p>
     ),
@@ -42,12 +42,17 @@ const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
 
     const previous = () => {
         const width = window.innerWidth;
-        if (width < 768) {
+        if (width < 640) {
             if (currentIndex > 1) {
-                setMargin((prev) => prev + 90);
+                setMargin((prev) => prev + 80);
                 setCurrentIndex((prev) => prev - 1);
             }
-        } else if (width >= 768) {
+        } else if (width < 1024) {
+            if (currentIndex > 1) {
+                setMargin((prev) => prev + 84);
+                setCurrentIndex((prev) => prev - 1);
+            }
+        } else if (width >= 1024) {
             if (currentIndex > 1) {
                 setMargin((prev) => prev + 84);
                 setCurrentIndex((prev) => prev - 1);
@@ -57,13 +62,18 @@ const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
 
     const next = () => {
         const width = window.innerWidth;
-        if (width < 768) {
+        if (width < 640) {
             if (currentIndex < numberOfItems) {
-                setMargin((prev) => prev - 90);
+                setMargin((prev) => prev - 80);
                 setCurrentIndex((prev) => prev + 1);
             }
-        } else if (width >= 768) {
+        } else if (width < 1024) {
             if (currentIndex < numberOfItems / 2) {
+                setMargin((prev) => prev - 84);
+                setCurrentIndex((prev) => prev + 1);
+            }
+        } else if (width >= 1024) {
+            if (currentIndex < numberOfItems / 3) {
                 setMargin((prev) => prev - 84);
                 setCurrentIndex((prev) => prev + 1);
             }
@@ -76,7 +86,7 @@ const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
             data-slice-variation={slice.variation}
             className="mb-10 overflow-hidden"
         >
-            <div className="bg-[#f4f3f8] px-[5vw] md:px-0 rounded-3xl pt-10 pb-16 md:w-[90vw] md:mx-auto relative">
+            <div className="bg-[#f4f3f8] px-[5vw] md:px-0 rounded-3xl pt-10 pb-16 w-[90vw] mx-auto relative">
                 <div className="heading text-center">
                     <PrismicRichText field={slice.primary.heading} />
                 </div>
@@ -86,11 +96,11 @@ const UserReview = ({ slice }: UserReviewProps): JSX.Element => {
                             marginLeft: margin + "vw",
                             transition: "0.3s",
                         }}
-                        className="flex md:gap-[4vw] mt-5 sticky z-10 w-fit"
+                        className="flex gap-0 sm:gap-[4vw] mt-5 sticky z-10 w-fit"
                     >
                         {slice.items.map((item, i) => (
                             <div
-                                className="bg-white rounded-[22px] w-[90vw] md:w-[38vw] p-10 pr-16 md:pr-10"
+                                className="bg-white rounded-[22px] w-[80vw] sm:w-[38vw] lg:w-[24vw] p-10 pr-16 md:pr-10"
                                 key={i}
                             >
                                 <div className="relative">
