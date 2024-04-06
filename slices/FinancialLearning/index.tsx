@@ -29,7 +29,7 @@ const FinancialLearning = ({ slice }: FinancialLearningProps): JSX.Element => {
             id="product"
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
-            className="sm:px-5 lg:px-12 bg-white"
+            className="sm:px-5 lg:px-12 bg-white font-glory"
         >
             <div className="bg-[#fcf6ff] py-20 px-5 sm:px-11 rounded-3xl flex flex-col md:flex-row md:justify-between md:items-center gap-5">
                 <div className="relative mx-auto md:mx-0 w-fit">

@@ -13,7 +13,7 @@ const Collaborator = ({ slice }: CollaboratorProps): JSX.Element => {
         <section
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
-            className="relative mb-10 overflow-hidden"
+            className="relative mb-10 overflow-hidden font-glory"
         >
             <div className="heading text-center mb-8">
                 <PrismicRichText field={slice.primary.heading} />

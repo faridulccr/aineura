@@ -25,7 +25,7 @@ const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
             id="about"
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
-            className="py-12 px-5 sm:px-8 lg:px-12 bg-white text-center"
+            className="py-12 px-5 sm:px-8 lg:px-12 bg-white text-center font-glory"
         >
             <div className="heading">
                 <PrismicRichText field={slice.primary.title} />

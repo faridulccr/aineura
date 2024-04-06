@@ -38,7 +38,7 @@ const FormSection = ({ slice }: FormSectionProps): JSX.Element => {
             id="contact-us"
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
-            className="py-16"
+            className="py-16 font-glory"
         >
             <div className="heading mb-6 xs:w-[350px] sm:w-[400px] md:w-[420px] mx-auto text-center">
                 <PrismicRichText

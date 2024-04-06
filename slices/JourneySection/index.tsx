@@ -17,7 +17,7 @@ const JourneySection = ({ slice }: JourneySectionProps): JSX.Element => {
         <section
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
-            className="relative"
+            className="relative font-glory"
         >
             <PrismicNextImage
                 className="w-full min-h-[200px] lg:max-h-[300px]"

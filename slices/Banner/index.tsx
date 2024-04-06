@@ -41,12 +41,13 @@ const Banner = ({ slice }: BannerProps): JSX.Element => {
                         field={slice.primary.aineura_logo}
                     />
                     <PrismicNextImage
-                        className="-mt-16 max-w-[154px] xs:max-w-[180px] md:max-w-[283px]"
+                        // className="-mt-16 max-w-[154px] xs:max-w-[180px] md:max-w-[283px]  border border-white"
+                        className="min-w-[154px] xs:min-w-[180px] md:max-w-[283px] -mt-20"
                         field={slice.primary.ainera_text_logo}
                     />
                 </div>
 
-                <div className="banner-content 2xl:px-10 text-center md:text-start leading-[30px] xs:leading-[50px] lg:leading-[62px]">
+                <div className="banner-content 2xl:px-10 text-center md:text-start leading-[30px] xs:leading-[50px] md:leading-[45px] lg:leading-[62px]">
                     <PrismicRichText
                         field={slice.primary.content}
                         components={heading}
